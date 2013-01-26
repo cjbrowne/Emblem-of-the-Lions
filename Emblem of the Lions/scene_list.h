@@ -34,9 +34,9 @@ enum SceneList {
 	SCENE_NULL = 0,
 
 	//custom indexes
-	DEBUG_SCENE,
+	TEST_SCENE,
 	MAIN_MENU,
-	GAME_WORLD,
+	OVERWORLD,
 };
 
 #endif

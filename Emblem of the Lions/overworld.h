@@ -1,19 +1,19 @@
-/* File Name: debug_scene.h
+/* File Name: overworld.h
  * Author: Kayne Ruse
  * Date (dd/mm/yyyy): 26/01/2013
  * Copyright: ...
  * Description: ...
 */
-#ifndef KR_DEBUGSCENE_H_
-#define KR_DEBUGSCENE_H_
+#ifndef KR_OVERWORLD_H_
+#define KR_OVERWORLD_H_
 
 #include "scene.h"
 
-class DebugScene : public Scene {
+class Overworld : public Scene {
 public:
 	/* Public access members */
-	DebugScene();
-	virtual ~DebugScene();
+	Overworld();
+	virtual ~Overworld();
 
 protected:
 	/* Frame loop */

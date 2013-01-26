@@ -178,6 +178,14 @@
 				RelativePath="..\Notes\TODO.txt"
 				>
 			</File>
+			<Filter
+				Name="Pseudocode"
+				>
+				<File
+					RelativePath="..\Notes\Pseudocode\Map System.txt"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Scene System"
@@ -223,26 +231,26 @@
 				</File>
 			</Filter>
 			<Filter
-				Name="Game World"
+				Name="Overworld"
 				>
 				<File
-					RelativePath=".\game_world.cpp"
+					RelativePath=".\overworld.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\game_world.h"
+					RelativePath=".\overworld.h"
 					>
 				</File>
 			</Filter>
 			<Filter
-				Name="Debug Scene"
+				Name="Test Scene"
 				>
 				<File
-					RelativePath=".\debug_scene.cpp"
+					RelativePath=".\test_scene.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\debug_scene.h"
+					RelativePath=".\test_scene.h"
 					>
 				</File>
 			</Filter>

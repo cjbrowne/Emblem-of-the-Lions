@@ -1,19 +1,19 @@
-/* File Name: game_world.h
+/* File Name: test_scene.h
  * Author: Kayne Ruse
  * Date (dd/mm/yyyy): 26/01/2013
  * Copyright: ...
  * Description: ...
 */
-#ifndef KR_GAMEWORLD_H_
-#define KR_GAMEWORLD_H_
+#ifndef KR_TESTSCENE_H_
+#define KR_TESTSCENE_H_
 
 #include "scene.h"
 
-class GameWorld : public Scene {
+class TestScene : public Scene {
 public:
 	/* Public access members */
-	GameWorld();
-	virtual ~GameWorld();
+	TestScene();
+	virtual ~TestScene();
 
 protected:
 	/* Frame loop */

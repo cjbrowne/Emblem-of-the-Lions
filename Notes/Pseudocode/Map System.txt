@@ -1,0 +1,27 @@
+This game doesn't need the world's most fancy map systme, it just needs to *work correctly*.
+
+Necessary:
+	Load the map data
+	Display the map
+
+Expected:
+	Save the map data (simple map editor)
+	Handle collision data (separate "layer")
+
+Several layers:
+	1: base layer
+	2: detail layer
+	3: overlay (displayed above entities)
+	4: collision (binary)
+
+-------------------------
+
+MapUtility:
+	-Image (spritesheet)
+	-Data (3D array)
+	-format (for the data)
+	
+	LoadMapData(fname)
+	SaveMapData(fname)
+	
+	

@@ -34,9 +34,9 @@
 //-------------------------
 
 //Add the custom scene headers here
-#include "debug_scene.h"
+#include "test_scene.h"
 #include "main_menu.h"
-#include "game_world.h"
+#include "overworld.h"
 
 //-------------------------
 //Public access members
@@ -89,16 +89,16 @@ void SceneManager::LoadScene(SceneList iSceneIndex) {
 
 	switch(iSceneIndex) {
 		//add scene creation here
-		case DEBUG_SCENE:
-			activeScene = new DebugScene();
+		case TEST_SCENE:
+			activeScene = new TestScene();
 			break;
 
 		case MAIN_MENU:
 			activeScene = new MainMenu();
 			break;
 
-		case GAME_WORLD:
-			activeScene = new GameWorld();
+		case OVERWORLD:
+			activeScene = new Overworld();
 			break;
 
 		default:

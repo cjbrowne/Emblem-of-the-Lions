@@ -17,11 +17,21 @@ Several layers:
 -------------------------
 
 MapUtility:
-	-Image (spritesheet)
-	-Data (3D array)
-	-format (for the data)
+	-string tilesetName
+	-Uint32 xCount, yCount, layerCount, width, height
+	-Image tileset
+	-Uint16 Data*** (3D array)
 	
-	LoadMapData(fname)
-	SaveMapData(fname)
+	-NewArray()
+	-DeleteArray()
 	
+	LoadMapData(mapname)
+	SaveMapData(mapname)
 	
+	GetTile(x, y, z)
+	SetTile(x, y, z, v)
+	
+	GetTileset()
+	SetTileset(Surface*) //I wish I was using C++11
+	
+	DrawLayerTo(screen, camX, camY)

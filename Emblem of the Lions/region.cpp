@@ -1,10 +1,5 @@
 #include "region.h"
 
-//debug
-#include <iostream>
-using std::cout;
-using std::endl;
-
 #include <stdexcept>
 #include <fstream>
 
@@ -57,7 +52,7 @@ void Region::SaveData(const char* fname) {
 		throw(std::runtime_error("Failed to save region data"));
 
 	//save the format data
-	os << xCount << " " << yCount << " " << zCount << endl;
+	os << xCount << " " << yCount << " " << zCount << std::endl;
 
 	//save the raw data (y axis first)
 	for (int j = 0; j < yCount; j++) {
@@ -67,7 +62,7 @@ void Region::SaveData(const char* fname) {
 			}
 			os << " ";
 		}
-		os << endl;
+		os << std::endl;
 	}
 
 	//cleanup

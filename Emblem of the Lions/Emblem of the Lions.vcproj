@@ -200,6 +200,14 @@
 				<File
 					RelativePath=".\scene_manager.cpp"
 					>
+					<FileConfiguration
+						Name="Release|Win32"
+						ExcludedFromBuild="true"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath=".\scene_manager.h"
@@ -316,17 +324,37 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="MapUtility"
+			Name="Map System"
 			>
-			<File
-				RelativePath=".\map_utility.cpp"
+			<Filter
+				Name="Region"
 				>
-			</File>
-			<File
-				RelativePath=".\map_utility.h"
+				<File
+					RelativePath=".\region.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\region.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="Map Utility"
 				>
-			</File>
+				<File
+					RelativePath=".\map_utility.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\map_utility.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
+		<File
+			RelativePath=".\debug.cpp"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>

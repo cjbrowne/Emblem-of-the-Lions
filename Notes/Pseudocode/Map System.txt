@@ -1,4 +1,5 @@
-This game doesn't need the world's most fancy map systme, it just needs to *work correctly*.
+This game doesn't need the world's most fancy map system, it just needs to *work correctly*.
+Don't be afraid of hardcoding for now.
 
 Necessary:
 	Load the map data
@@ -16,22 +17,32 @@ Several layers:
 
 -------------------------
 
-MapUtility:
-	-string tilesetName
-	-Uint32 xCount, yCount, layerCount, width, height
-	-Image tileset
-	-Uint16 Data*** (3D array)
+Region:
+	-Uint16 x, y, z
+	-Uint16 ***data
 	
-	-NewArray()
-	-DeleteArray()
+	LoadData(fname)
+	SaveData(fname)
 	
-	LoadMapData(mapname)
-	SaveMapData(mapname)
+	NewData(x, y, z)
+	DeleteData()
 	
-	GetTile(x, y, z)
 	SetTile(x, y, z, v)
+	GetTile(x, y, z)
+end
+
+MapUtility:
+	-Region region (vector/pagination?)
+	-Image tileset
+	-string tilesetName
 	
-	GetTileset()
-	SetTileset(Surface*) //I wish I was using C++11
+	LoadMap(fname)
+	SaveMap(fname)
 	
-	DrawLayerTo(screen, camX, camY)
+	NewMap(x, y, z, tileset)
+	DeleteMap()
+	
+	LoadTileset(fname) //used by LoadMap as well, used to set & switch tilesets
+	
+	DrawTo(screen, camX, camY)
+end

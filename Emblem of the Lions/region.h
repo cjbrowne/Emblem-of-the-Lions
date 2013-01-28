@@ -15,11 +15,11 @@ public:
 	void DeleteData();
 
 	Uint16 SetTile(Uint16 x, Uint16 y, Uint16 z, Uint16 v);
-	Uint16 GetTile(Uint16 x, Uint16 y, Uint16 z);
+	Uint16 GetTile(Uint16 x, Uint16 y, Uint16 z) const;
 
-	Uint16 GetX();
-	Uint16 GetY();
-	Uint16 GetZ();
+	Uint16 GetX() const;
+	Uint16 GetY() const;
+	Uint16 GetZ() const;
 
 private:
 	Uint16 xCount, yCount, zCount;

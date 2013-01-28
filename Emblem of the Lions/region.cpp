@@ -117,7 +117,7 @@ Uint16 Region::SetTile(Uint16 x, Uint16 y, Uint16 z, Uint16 v) {
 	data[x][y][z] = v;
 }
 
-Uint16 Region::GetTile(Uint16 x, Uint16 y, Uint16 z) {
+Uint16 Region::GetTile(Uint16 x, Uint16 y, Uint16 z) const {
 	if (data == NULL)
 		throw(std::logic_error("No region data to retrieve"));
 
@@ -127,14 +127,14 @@ Uint16 Region::GetTile(Uint16 x, Uint16 y, Uint16 z) {
 	return data[x][y][z];
 }
 
-Uint16 Region::GetX() {
+Uint16 Region::GetX() const {
 	return xCount;
 }
 
-Uint16 Region::GetY() {
+Uint16 Region::GetY() const {
 	return yCount;
 }
 
-Uint16 Region::GetZ() {
+Uint16 Region::GetZ() const {
 	return zCount;
 }

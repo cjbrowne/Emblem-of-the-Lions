@@ -12,13 +12,14 @@ Expected:
 Several layers:
 	1: base layer
 	2: detail layer
+	-: Entities
 	3: overlay (displayed above entities)
 	4: collision (binary)
 
 -------------------------
 
 Region:
-	-Uint16 x, y, z
+	-Uint16 xCount, yCount, zCount
 	-Uint16 ***data
 	
 	LoadData(fname)
@@ -29,20 +30,53 @@ Region:
 	
 	SetTile(x, y, z, v)
 	GetTile(x, y, z)
+	
+	GetX()
+	GetY()
+	GetZ()
 end
 
 MapUtility:
-	-Region region (vector/pagination?)
+	-string tname
 	-Image tileset
-	-string tilesetName
+	-Uint16 xCount, yCount //regions
+	-Uint16 rWidth, rHeight, rDepth //these MUST match the regions' values
+	-Region **data
+	
+	-CheckValidData() //checks that everything is correctly formatted
 	
 	LoadMap(fname)
 	SaveMap(fname)
 	
-	NewMap(x, y, z, tileset)
+	NewMap(xCount, yCount, rWidth, rHeight, rDepth)
 	DeleteMap()
 	
-	LoadTileset(fname) //used by LoadMap as well, used to set & switch tilesets
+	DrawTo(screen, x, y)
 	
-	DrawTo(screen, camX, camY)
+	SetTile(x, y, z, v) //relative to the map
+	GetTile(x, y, z)
+	GetRegion(x, y)
+	
+	//one tileset for an entire map
+	SetTileset(tname)
+	GetTileset()
 end
+
+-------------------------
+
+Formats:
+
+Region:
+	xCount yCount zCount
+	[data]
+end
+
+Map:
+	tname
+	tWidth tHeight
+	xCount yCount rWidth rHeight rDepth
+	[rname]
+end
+
+-------------------------
+

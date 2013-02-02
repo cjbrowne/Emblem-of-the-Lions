@@ -22,16 +22,16 @@ public:
 
 	//relative to the map
 	Uint16 SetTile(Uint16 x, Uint16 y, Uint16 z, Uint16 v);
-	Uint16 GetTile(Uint16 x, Uint16 y, Uint16 z) const;
-	Region* GetRegion(Uint16 x, Uint16 y) const;
+	Uint16 GetTile(Uint16 x, Uint16 y, Uint16 z);
+	Region* GetRegion(Uint16 x, Uint16 y);
 
 	//one tileset for the entire map
 	void SetTileset(const char* fname);
-	Image* GetTileset() const;
-	const char* GetTilesetName() const;
+	Image* GetTileset();
+	const char* GetTilesetName();
 
 private:
-	void CheckValidData() const;
+	void CheckValidData();
 
 	char tname[512];
 	Image tileset;

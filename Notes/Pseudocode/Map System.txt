@@ -80,3 +80,5 @@ end
 
 -------------------------
 
+Load tile name
+Load tile width & tile height

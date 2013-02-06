@@ -22,6 +22,9 @@ public:
 	Uint16 GetZ();
 	
 	Uint16 operator++(void);
+	bool end(void);
+	bool rewind(void);
+	
 
 private:
 	Uint16 xCount, yCount, zCount;

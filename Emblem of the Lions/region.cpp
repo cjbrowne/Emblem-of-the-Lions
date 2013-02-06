@@ -159,3 +159,15 @@ Uint16 Region::operator++() {
 	iterator++;
 	return tmp;
 }
+
+// actually I'll leave this to you to implement, sorry about that!
+bool Region::end() {
+	// return if "iterator" points past the end of "data".  If I were you, I'd use a sentinel, or maintain
+	// a "tile count" (maybe you already do, I haven't checked) and a separate iterator that just tracks
+	// the position of 'iterator'.
+}
+
+// this one was really simple
+void Region::rewind() {
+	iterator = data;
+}

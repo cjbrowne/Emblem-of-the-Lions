@@ -149,7 +149,13 @@ Uint16 Region::GetZ() {
 	return zCount;
 }
 
+// in theory, this should work like any postfix increment, but if it doesn't that's because
+// the 'tmp' pointer is being updated by the line "iterator++", which shouldn't happen
+// so, the intended behaviour is to return the current "tile", and iterate the internal
+// representation of what the "current" tile means.  Note that I haven't done any
+// bounds checking, you'll have to implement that yourself.
 Uint16 Region::operator++() {
+	Uint16* tmp = iterator;
 	iterator++;
-	return *iterator;
+	return tmp;
 }

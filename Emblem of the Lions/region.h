@@ -20,10 +20,13 @@ public:
 	Uint16 GetX();
 	Uint16 GetY();
 	Uint16 GetZ();
+	
+	Uint16 operator++(void);
 
 private:
 	Uint16 xCount, yCount, zCount;
 	Uint16 ***data;
+	Uint16 **iterator;
 };
 
 #endif

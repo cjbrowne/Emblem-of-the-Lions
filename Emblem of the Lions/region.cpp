@@ -6,6 +6,7 @@
 Region::Region() {
 	xCount = yCount = zCount = 0;
 	data = NULL;
+	iterator = data;
 }
 
 Region::~Region() {
@@ -33,10 +34,19 @@ void Region::LoadData(const char* fname) {
 	for (int j = 0; j < yCount; j++) {
 		for (int i = 0; i < xCount; i++) {
 			for (int k = 0; k < zCount; k++) {
+				// I'm not sure if you can still use the syntactic sugar here
+				// if it breaks, switch the following two lines over
+				// also note that my maths could be way off, 3D arrays are finicky
+				// and you'd be much better off using a Tile datatype that specifies
+				// coordinates and has an iterator (so that Region can just call Tile's iterator)
+				// rather than using a Uint16 as an attempt at premature optimisation
+				// is >> *(data + i*(j*k) + j*k + k)
 				is >> data[i][j][k];
 			}
 		}
 	}
+	
+	iterator = data; // iterator should start where data starts
 
 	//cleanup
 	is.close();
@@ -137,4 +147,9 @@ Uint16 Region::GetY() {
 
 Uint16 Region::GetZ() {
 	return zCount;
+}
+
+Uint16 Region::operator++() {
+	iterator++;
+	return *iterator;
 }

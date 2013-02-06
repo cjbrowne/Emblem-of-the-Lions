@@ -11,11 +11,15 @@
 //-------------------------
 
 Overworld::Overworld() {
-	//
+	region.LoadData("data.txt");
+	tileset.LoadSurface("terrain.bmp");
+	tileset.SetClipW(32);
+	tileset.SetClipH(32);
 }
 
 Overworld::~Overworld() {
-	//
+	region.DeleteData();
+	tileset.UnloadSurface();
 }
 
 //-------------------------
@@ -35,7 +39,15 @@ void Overworld::Update() {
 }
 
 void Overworld::Render(SDL_Surface* const screen) {
-	//
+	for (Uint16 i = 0; i < region.GetX(); i++) {
+		for (Uint16 j = 0; j < region.GetY(); j++) {
+			for (Uint16 k = 0; k < region.GetZ(); k++) {
+				tileset.SetClipX(region.GetTile(i, j, k) % region.GetX() * tileset.GetClipW());
+				tileset.SetClipY(region.GetTile(i, j, k) / region.GetX() * tileset.GetClipH());
+				tileset.DrawTo(screen, i * tileset.GetClipW(), j * tileset.GetClipH());
+			}
+		}
+	}
 }
 
 //-------------------------

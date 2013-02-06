@@ -9,6 +9,9 @@
 
 #include "scene.h"
 
+#include "region.h"
+#include "Codebase/image.h"
+
 class Overworld : public Scene {
 public:
 	/* Public access members */
@@ -28,6 +31,10 @@ protected:
 	virtual void MouseButtonUp		(SDL_MouseButtonEvent const&);
 	virtual void KeyDown			(SDL_KeyboardEvent const&);
 	virtual void KeyUp				(SDL_KeyboardEvent const&);
+
+	/* Members */
+	Region region;
+	Image tileset;
 };
 
 #endif

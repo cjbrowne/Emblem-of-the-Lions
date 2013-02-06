@@ -202,7 +202,6 @@
 					>
 					<FileConfiguration
 						Name="Release|Win32"
-						ExcludedFromBuild="true"
 						>
 						<Tool
 							Name="VCCLCompilerTool"
@@ -338,22 +337,18 @@
 					>
 				</File>
 			</Filter>
-			<Filter
-				Name="Map Utility"
-				>
-				<File
-					RelativePath=".\map_utility.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\map_utility.h"
-					>
-				</File>
-			</Filter>
 		</Filter>
 		<File
 			RelativePath=".\debug.cpp"
 			>
+			<FileConfiguration
+				Name="Release|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+				/>
+			</FileConfiguration>
 		</File>
 	</Files>
 	<Globals>

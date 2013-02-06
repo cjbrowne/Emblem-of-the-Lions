@@ -58,7 +58,7 @@ void SceneManager::Init() {
 }
 
 void SceneManager::Proc() {
-	LoadScene(MAIN_MENU);
+	LoadScene(OVERWORLD); //tmp
 
 	//The main loop
 	while(activeScene->GetNextScene() != SCENE_QUIT) {
